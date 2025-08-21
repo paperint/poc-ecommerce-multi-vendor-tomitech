@@ -1,21 +1,22 @@
-"use client"
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Eye, EyeOff, Mail, Lock, User, Phone, MapPin } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Eye, EyeOff, Mail, Lock, User, Phone, MapPin } from "lucide-react";
 
 interface AuthFormProps {
-  type: "login" | "register" | "vendor-register" | "forgot-password"
-  onSubmit: (data: any) => void
+  type: "login" | "register" | "vendor-register" | "forgot-password";
+  onSubmit: (data: any) => void;
 }
 
 export function AuthForm({ type, onSubmit }: AuthFormProps) {
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -27,46 +28,50 @@ export function AuthForm({ type, onSubmit }: AuthFormProps) {
     businessAddress: "",
     businessDescription: "",
     userType: "customer",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    onSubmit(formData)
-  }
+    e.preventDefault();
+    onSubmit(formData);
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const getTitle = () => {
     switch (type) {
       case "login":
-        return "Sign In"
+        return "Sign In";
       case "register":
-        return "Create Account"
+        return "Create Account";
       case "vendor-register":
-        return "Become a Vendor"
+        return "Become a Vendor";
       case "forgot-password":
-        return "Reset Password"
+        return "Reset Password";
       default:
-        return "Authentication"
+        return "Authentication";
     }
-  }
+  };
 
   const getDescription = () => {
     switch (type) {
       case "login":
-        return "Welcome back! Please sign in to your account."
+        return "Welcome back! Please sign in to your account.";
       case "register":
-        return "Create your account to start shopping."
+        return "Create your account to start shopping.";
       case "vendor-register":
-        return "Join our marketplace and start selling your products."
+        return "Join our marketplace and start selling your products.";
       case "forgot-password":
-        return "Enter your email to receive a password reset link."
+        return "Enter your email to receive a password reset link.";
       default:
-        return ""
+        return "";
     }
-  }
+  };
 
   return (
     <Card className="w-full max-w-md">
@@ -196,7 +201,9 @@ export function AuthForm({ type, onSubmit }: AuthFormProps) {
                 </div>
               </div>
               <div>
-                <Label htmlFor="businessDescription">Business Description</Label>
+                <Label htmlFor="businessDescription">
+                  Business Description
+                </Label>
                 <textarea
                   id="businessDescription"
                   name="businessDescription"
@@ -302,5 +309,5 @@ export function AuthForm({ type, onSubmit }: AuthFormProps) {
         </form>
       </CardContent>
     </Card>
-  )
+  );
 }
