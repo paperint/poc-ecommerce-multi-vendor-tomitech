@@ -1,8 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Star, Heart, ShoppingCart } from "lucide-react"
-import Link from "next/link"
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Star, Heart, ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 const products = [
   {
@@ -13,7 +13,7 @@ const products = [
     rating: 4.5,
     reviews: 234,
     image: "/placeholder.svg?height=250&width=250",
-    vendor: "TechHub Store",
+    vendor: "Tomi Store",
     badge: "Best Seller",
     badgeColor: "bg-primary text-primary-foreground",
   },
@@ -77,22 +77,28 @@ const products = [
     badge: "Limited",
     badgeColor: "bg-accent text-accent-foreground",
   },
-]
+];
 
 export function FeaturedProducts() {
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Featured Products</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">
+            Featured Products
+          </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Discover our handpicked selection of trending products from verified vendors
+            Discover our handpicked selection of trending products from verified
+            vendors
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
           {products.map((product) => (
-            <Card key={product.id} className="group hover:shadow-lg transition-all duration-300">
+            <Card
+              key={product.id}
+              className="group hover:shadow-lg transition-all duration-300"
+            >
               <CardContent className="p-4">
                 <div className="relative mb-4">
                   <img
@@ -100,7 +106,11 @@ export function FeaturedProducts() {
                     alt={product.name}
                     className="w-full aspect-square object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
                   />
-                  <Badge className={`absolute top-2 left-2 ${product.badgeColor}`}>{product.badge}</Badge>
+                  <Badge
+                    className={`absolute top-2 left-2 ${product.badgeColor}`}
+                  >
+                    {product.badge}
+                  </Badge>
                   <Button
                     variant="ghost"
                     size="icon"
@@ -117,18 +127,28 @@ export function FeaturedProducts() {
                     </h3>
                   </Link>
 
-                  <p className="text-xs text-muted-foreground">{product.vendor}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {product.vendor}
+                  </p>
 
                   <div className="flex items-center gap-1">
                     <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                    <span className="text-xs font-medium">{product.rating}</span>
-                    <span className="text-xs text-muted-foreground">({product.reviews})</span>
+                    <span className="text-xs font-medium">
+                      {product.rating}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      ({product.reviews})
+                    </span>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-primary">${product.price}</span>
+                    <span className="font-bold text-primary">
+                      ${product.price}
+                    </span>
                     {product.originalPrice && (
-                      <span className="text-xs text-muted-foreground line-through">${product.originalPrice}</span>
+                      <span className="text-xs text-muted-foreground line-through">
+                        ${product.originalPrice}
+                      </span>
                     )}
                   </div>
 
@@ -149,5 +169,5 @@ export function FeaturedProducts() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -34,8 +34,8 @@ export function VendorSidebar() {
   const pathname = usePathname();
 
   const vendor = {
-    name: "TechHub Store",
-    email: "contact@techhub.com",
+    name: "Tomi Store",
+    email: "contact@tomi.com",
     avatar: "/placeholder.svg?height=40&width=40",
     verified: true,
   };

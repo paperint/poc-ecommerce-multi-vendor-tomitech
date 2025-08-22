@@ -37,7 +37,7 @@ const products = [
     rating: 4.8,
     reviews: 1234,
     image: "/placeholder.svg?height=300&width=300",
-    vendor: "TechHub Store",
+    vendor: "Tomi Store",
     badge: "Latest",
     badgeColor: "bg-primary text-primary-foreground",
   },

@@ -1,25 +1,26 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Star, Heart, ShoppingCart } from "lucide-react"
-import Link from "next/link"
+/* eslint-disable @next/next/no-img-element */
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Star, Heart, ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 interface Product {
-  id: number
-  name: string
-  price: number
-  originalPrice?: number
-  rating: number
-  reviews: number
-  image: string
-  vendor: string
-  badge?: string
-  badgeColor?: string
+  id: number;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  rating: number;
+  reviews: number;
+  image: string;
+  vendor: string;
+  badge?: string;
+  badgeColor?: string;
 }
 
 interface ProductGridProps {
-  products: Product[]
-  columns?: 2 | 3 | 4 | 5 | 6
+  products: Product[];
+  columns?: 2 | 3 | 4 | 5 | 6;
 }
 
 export function ProductGrid({ products, columns = 4 }: ProductGridProps) {
@@ -29,12 +30,15 @@ export function ProductGrid({ products, columns = 4 }: ProductGridProps) {
     4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
     5: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5",
     6: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6",
-  }
+  };
 
   return (
     <div className={`grid ${gridCols[columns]} gap-6`}>
       {products.map((product) => (
-        <Card key={product.id} className="group hover:shadow-lg transition-all duration-300">
+        <Card
+          key={product.id}
+          className="group hover:shadow-lg transition-all duration-300"
+        >
           <CardContent className="p-4">
             <div className="relative mb-4">
               <Link href={`/product/${product.id}`}>
@@ -46,7 +50,9 @@ export function ProductGrid({ products, columns = 4 }: ProductGridProps) {
               </Link>
               {product.badge && (
                 <Badge
-                  className={`absolute top-2 left-2 ${product.badgeColor || "bg-primary text-primary-foreground"}`}
+                  className={`absolute top-2 left-2 ${
+                    product.badgeColor || "bg-primary text-primary-foreground"
+                  }`}
                 >
                   {product.badge}
                 </Badge>
@@ -62,23 +68,35 @@ export function ProductGrid({ products, columns = 4 }: ProductGridProps) {
 
             <div className="space-y-2">
               <Link href={`/product/${product.id}`}>
-                <h3 className="font-semibold hover:text-primary transition-colors line-clamp-2">{product.name}</h3>
+                <h3 className="font-semibold hover:text-primary transition-colors line-clamp-2">
+                  {product.name}
+                </h3>
               </Link>
 
-              <Link href={`/vendor/${product.vendor.toLowerCase().replace(/\s+/g, "-")}`}>
-                <p className="text-sm text-muted-foreground hover:text-primary transition-colors">{product.vendor}</p>
+              <Link
+                href={`/vendor/${product.vendor
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
+              >
+                <p className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  {product.vendor}
+                </p>
               </Link>
 
               <div className="flex items-center gap-1">
                 <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 <span className="text-sm font-medium">{product.rating}</span>
-                <span className="text-sm text-muted-foreground">({product.reviews})</span>
+                <span className="text-sm text-muted-foreground">
+                  ({product.reviews})
+                </span>
               </div>
 
               <div className="flex items-center gap-2">
                 <span className="font-bold text-primary">${product.price}</span>
                 {product.originalPrice && (
-                  <span className="text-sm text-muted-foreground line-through">${product.originalPrice}</span>
+                  <span className="text-sm text-muted-foreground line-through">
+                    ${product.originalPrice}
+                  </span>
                 )}
               </div>
 
@@ -91,5 +109,5 @@ export function ProductGrid({ products, columns = 4 }: ProductGridProps) {
         </Card>
       ))}
     </div>
-  )
+  );
 }

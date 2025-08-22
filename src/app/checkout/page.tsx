@@ -30,7 +30,7 @@ const orderItems = [
     name: "Wireless Bluetooth Headphones",
     price: 89.99,
     quantity: 1,
-    vendor: "TechHub Store",
+    vendor: "Tomi Store",
     image: "/placeholder.svg?height=60&width=60",
   },
   {
@@ -38,7 +38,7 @@ const orderItems = [
     name: "Mechanical Gaming Keyboard",
     price: 129.99,
     quantity: 1,
-    vendor: "TechHub Store",
+    vendor: "Tomi Store",
     image: "/placeholder.svg?height=60&width=60",
   },
   {

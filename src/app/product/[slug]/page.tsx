@@ -37,7 +37,7 @@ const product = {
   ],
   vendor: {
     id: 1,
-    name: "TechHub Store",
+    name: "Tomi Store",
     rating: 4.8,
     reviews: 1250,
     verified: true,
@@ -95,7 +95,7 @@ const reviews = [
     rating: 5,
     date: "2024-01-05",
     comment:
-      "Best headphones I've owned. Worth every penny. Fast shipping from TechHub Store too!",
+      "Best headphones I've owned. Worth every penny. Fast shipping from Tomi Store too!",
     helpful: 15,
   },
 ];

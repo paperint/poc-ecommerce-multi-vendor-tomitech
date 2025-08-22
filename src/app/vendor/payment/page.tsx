@@ -87,7 +87,7 @@ const paymentMethods = [
   },
   {
     type: "PayPal",
-    details: "contact@techhub.com",
+    details: "contact@tomi.com",
     primary: false,
     verified: true,
   },
