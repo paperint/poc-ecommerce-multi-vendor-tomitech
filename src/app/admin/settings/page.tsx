@@ -31,7 +31,7 @@ export default function AdminSettings() {
             <CardContent className="space-y-6">
               <div>
                 <Label htmlFor="siteName">Site Name</Label>
-                <Input id="siteName" defaultValue="MarketPlace Pro" />
+                <Input id="siteName" defaultValue="Tomitech MarketPlace Pro" />
               </div>
               <div>
                 <Label htmlFor="siteDescription">Site Description</Label>

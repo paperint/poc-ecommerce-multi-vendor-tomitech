@@ -1,21 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu"
-import { Search, ShoppingCart, User, Menu, Heart, ShoppingBag } from "lucide-react"
+} from "@/components/ui/dropdown-menu";
+import {
+  Search,
+  ShoppingCart,
+  User,
+  Menu,
+  Heart,
+  ShoppingBag,
+} from "lucide-react";
 
 export function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -24,32 +31,50 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <ShoppingBag className="h-8 w-8 text-emerald-600" />
-            <span className="font-bold text-xl">MarketPlace</span>
+            <span className="font-bold text-xl">Tomitech MarketPlace</span>
           </Link>
 
           {/* Search Bar - Hidden on mobile */}
           <div className="hidden md:flex flex-1 max-w-md mx-8">
             <div className="relative w-full">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-              <Input placeholder="Search products, vendors..." className="pl-10 pr-4" />
+              <Input
+                placeholder="Search products, vendors..."
+                className="pl-10 pr-4"
+              />
             </div>
           </div>
 
           {/* Navigation Links - Hidden on mobile */}
           <nav className="hidden lg:flex items-center space-x-6">
-            <Link href="/" className="text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Home
             </Link>
-            <Link href="/marketplace" className="text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/marketplace"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Marketplace
             </Link>
-            <Link href="/vendor/1" className="text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/vendor/1"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Vendors
             </Link>
-            <Link href="/category/electronics" className="text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/category/electronics"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Categories
             </Link>
-            <Link href="/support" className="text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/support"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Support
             </Link>
           </nav>
@@ -111,7 +136,12 @@ export function Navigation() {
             </DropdownMenu>
 
             {/* Mobile Menu */}
-            <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
               <Menu className="h-5 w-5" />
             </Button>
           </div>
@@ -121,29 +151,50 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="lg:hidden border-t py-4">
             <nav className="flex flex-col space-y-4">
-              <Link href="/" className="text-foreground hover:text-primary transition-colors">
+              <Link
+                href="/"
+                className="text-foreground hover:text-primary transition-colors"
+              >
                 Home
               </Link>
-              <Link href="/marketplace" className="text-foreground hover:text-primary transition-colors">
+              <Link
+                href="/marketplace"
+                className="text-foreground hover:text-primary transition-colors"
+              >
                 Marketplace
               </Link>
-              <Link href="/vendor/1" className="text-foreground hover:text-primary transition-colors">
+              <Link
+                href="/vendor/1"
+                className="text-foreground hover:text-primary transition-colors"
+              >
                 Vendors
               </Link>
-              <Link href="/category/electronics" className="text-foreground hover:text-primary transition-colors">
+              <Link
+                href="/category/electronics"
+                className="text-foreground hover:text-primary transition-colors"
+              >
                 Categories
               </Link>
-              <Link href="/support" className="text-foreground hover:text-primary transition-colors">
+              <Link
+                href="/support"
+                className="text-foreground hover:text-primary transition-colors"
+              >
                 Support
               </Link>
-              <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
+              <Link
+                href="/contact"
+                className="text-foreground hover:text-primary transition-colors"
+              >
                 Contact
               </Link>
               {/* Mobile Search */}
               <div className="pt-4">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                  <Input placeholder="Search products, vendors..." className="pl-10 pr-4" />
+                  <Input
+                    placeholder="Search products, vendors..."
+                    className="pl-10 pr-4"
+                  />
                 </div>
               </div>
             </nav>
@@ -151,5 +202,5 @@ export function Navigation() {
         )}
       </div>
     </header>
-  )
+  );
 }

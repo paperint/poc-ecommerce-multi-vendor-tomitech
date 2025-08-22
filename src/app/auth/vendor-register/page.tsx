@@ -30,7 +30,7 @@ export default function VendorRegisterPage() {
           >
             <ShoppingBag className="h-8 w-8 text-emerald-600" />
             <span className="text-2xl font-bold text-gray-900">
-              MarketPlace
+              Tomitech MarketPlace
             </span>
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
